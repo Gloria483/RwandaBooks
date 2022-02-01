@@ -2,13 +2,12 @@
 
 if(isset($_POST['add'])){
 	
-	$name=$_POST['name']; 
-	$Books =$_POST['Books'];
-	$cost =$_POST['cost'];
+	$username =$_POST['user'];
+  $pass=$_POST['pass'];
 
 	
 
- $sql="INSERT INTO authors(firstname,lastname,password)VALUES('$name','$Books','$cost')";
+ $sql="INSERT INTO authors(username,password)VALUES('	$username','$pass')";
         if (mysqli_query($conn, $sql)) {
       $insert_id = $conn->insert_id;
         $_SESSION['insert_id']=$insert_id;
@@ -38,9 +37,8 @@ if(isset($_POST['add'])){
     <h1 id="login-header">Sign_up</h1>
     
     <form id="login-form" method="post">
-      <input type="text" name="name" id="first-field" class="login-form-field" placeholder="First_name">
-      <input type="text" name="Books" id="second-field" class="login-form-field" placeholder="Last_name">
-      <input type="password" name="cost" id="password-field" class="login-form-field" placeholder="Password">
+      <input type="text" name="user" id="second-field" class="login-form-field" placeholder="Usename">
+      <input type="password" name="pass" id="password-field" class="login-form-field" placeholder="Password">
       <input type="submit" value="Sign_up" name="add" id="login-form-submit">
      
     

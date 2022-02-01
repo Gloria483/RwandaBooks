@@ -1,4 +1,4 @@
-<?php 
+<?php  session_start();
 include 'connection.php';
 
 
@@ -18,17 +18,10 @@ if(isset($_POST['btn'])){
     
   }
   else{
-    $row=mysqli_fetch_array($query);
-    
-    //$pHash=;
-    if( password_verify($password,$row['Password']));
+ 
+$_SESSION['user'] =  $username;   
+echo "<script>alert('login success'); window.location='addBook.php'</script>";
 
-
-else{
-echo "<script>alert('login success')</script>";
-}
-    
-    
   }
 }
   ?>
